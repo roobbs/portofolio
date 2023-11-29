@@ -19,6 +19,15 @@ body {
   position: sticky;
   top: 0px;
 }
+.header .logo {
+  font-family: monospace;
+  font-weight: 900;
+  color: rgb(155, 155, 255);
+  font-size: 1.5rem;
+  background-color: var(--one);
+  border-radius: 10px;
+  padding: 6px;
+}
 .header .menu {
   display: flex;
   gap: 1.5rem;
@@ -81,6 +90,11 @@ body {
   font-family: monospace;
   font-size: 1.7rem;
   padding: 0rem 2.5rem;
+  transition: transform 0.5s ease-out;
+  transform-origin: left;
+}
+.title:hover {
+  transform: scale(1.1);
 }
 .aboutContent {
   display: grid;
@@ -99,18 +113,80 @@ body {
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-.knowledge img {
+.knowledge img,
+img {
   height: 6rem;
   transition: transform 0.5s ease-out;
 }
-.knowledge img:hover {
+.knowledge img:hover,
+img:hover {
   transform: scale(1.2);
 }
+/********************************/
 .work {
   border-bottom: 2px solid white;
   margin: 2rem;
   padding: 2rem;
 }
+.content {
+  padding: 2.5rem;
+  /*Use flex or grid*/
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+}
+.project {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+.projectImg {
+  grid-column: span 7;
+  background-color: var(--three);
+  border-radius: 10px;
+  z-index: 1;
+}
+.projectImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.projectImg img:hover {
+  transform: translate(12px, 12px);
+}
+.projectContent {
+  grid-column: span 3;
+  font-family: monospace;
+  z-index: 2;
+  transform: translate(-50px);
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.projectTitle {
+  color: var(--three);
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 900;
+}
+.desc {
+  font-size: 1.4rem;
+  padding: 1rem;
+  background-color: rgb(17, 17, 71);
+  border-radius: 8px;
+}
+.tech {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: rgb(121, 121, 255);
+}
+.tech div {
+  background-color: var(--one);
+  border-radius: 5px;
+  padding: 5px;
+}
+/*******************************/
 .contact {
   margin: 2rem;
   padding: 2rem;
@@ -131,7 +207,7 @@ body {
   gap: 1rem;
 }
 .info img {
-  width: 3rem;
+  height: 3rem;
 }
 .git {
   display: flex;
